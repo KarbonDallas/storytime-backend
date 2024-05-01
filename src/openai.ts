@@ -1,5 +1,6 @@
 import OpenAI from "openai"
-import type { Genre, Prompt } from "./system/prompts"
+
+import type { Genre, Prompt } from "./system/types"
 import { createSystemPrompt, genreList } from "./system/prompts"
 import { ChatCompletionMessageParam } from "openai/resources"
 
