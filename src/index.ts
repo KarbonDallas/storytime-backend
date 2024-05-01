@@ -1,4 +1,5 @@
 import "dotenv/config"
+
 import fastify, { FastifyInstance } from "fastify"
 import websock from "./websock"
 import { readFileSync } from "fs"
