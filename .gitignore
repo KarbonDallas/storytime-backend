@@ -1,0 +1,16 @@
+# Env vars
+.env*
+# SSL certificates
+certs
+ssl
+*.key
+*.pem
+*.crt
+
+# AI output
+output
+
+# Node stuff
+dist
+node_modules
+.vscode

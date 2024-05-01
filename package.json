@@ -1,0 +1,35 @@
+{
+	"name": "storytime-backend",
+	"version": "1.0.0",
+	"description": "Realtime AI-powered interactive transmedia storytelling demo",
+	"scripts": {
+		"dev:watch": "tsc --watch --preserveWatchOutput --pretty",
+		"dev:node": "cross-env NODE_ENV=development nodemon",
+		"dev": "concurrently \"npm run dev:watch\" \"npm run dev:node\"",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"postinstall": "mkdirp output output/audio output/image output/story output/text",
+		"build": "rimraf dist && tsc",
+		"start": "node dist/index.js"
+	},
+	"author": "Karbon Dallas <hello@krbn.life>",
+	"license": "MIT",
+	"dependencies": {
+		"@fastify/websocket": "^10.0.1",
+		"dotenv": "^16.4.5",
+		"fastify": "^4.26.2",
+		"openai": "^4.39.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.12.7",
+		"@types/ws": "^8.5.10",
+		"concurrently": "^8.2.2",
+		"cross-env": "^7.0.3",
+		"fastify-tsconfig": "^2.0.0",
+		"mkdirp": "^3.0.1",
+		"nodemon": "^3.1.0",
+		"prettier": "^3.2.5",
+		"rimraf": "^5.0.5",
+		"tsconfig-paths": "^4.2.0",
+		"typescript": "^5.4.5"
+	}
+}
