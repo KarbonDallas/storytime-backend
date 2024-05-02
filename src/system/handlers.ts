@@ -37,8 +37,6 @@ export const generateImages = async (prompt: string) => {
 		height: image_size,
 		num_images_per_prompt: num_images,
 	}
-	console.log(`Sending request to ${livepeer_sd_gateway}`)
-	console.log(JSON.stringify(body, null, 2))
 	const request = await _request({
 		...livePeerRequestOptions,
 		body: JSON.stringify(body),
