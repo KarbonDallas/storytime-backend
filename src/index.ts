@@ -26,6 +26,6 @@ if (process.env.NODE_ENV !== "production") {
 // Websock Controller
 app.register(websock, { server: app.server })
 
-app.listen({ port, host: "0.0.0.0" })
+app.listen({ port, host })
 
 console.log(`Storytime backend server listening on ${host}:${port}`)
