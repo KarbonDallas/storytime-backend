@@ -1,5 +1,6 @@
 # Env vars
 .env*
+!.env.example
 # SSL certificates
 certs
 ssl
