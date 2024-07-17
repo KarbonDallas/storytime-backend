@@ -31,8 +31,8 @@ export const generateImages = async (prompt: string) => {
 	const body = {
 		prompt,
 		model_id,
-		// guidance_scale, // NOTE: doesn't seem to work yet
-		// negative_prompt,
+		guidance_scale, // NOTE: looks like it works now!
+		negative_prompt,
 		width: image_size,
 		height: image_size,
 		num_images_per_prompt: num_images,
