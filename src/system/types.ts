@@ -1,6 +1,7 @@
 export interface LivepeerImage {
 	seed: number
 	url: string
+	nsfw: boolean
 }
 export interface StateType {
 	streaming_audio: boolean
