@@ -28,6 +28,7 @@ const livePeerRequestOptions = {
 }
 
 export const generateImages = async (prompt: string) => {
+	let urls
 	const body = {
 		prompt,
 		model_id,
@@ -41,10 +42,19 @@ export const generateImages = async (prompt: string) => {
 		...livePeerRequestOptions,
 		body: JSON.stringify(body),
 	})
+
 	const { images } = await request.json()
-	const urls = images.map((image: LivepeerImage) => {
-		return new URL(image.url, `https://${livepeer_sd_gateway}`).toString()
-	})
+	if (!images || images.length === 0) {
+		throw new Error("No images returned from Livepeer")
+	}
+
+	try {
+		urls = images.map((image: LivepeerImage) => {
+			return image.url
+		})
+	} catch (e) {
+		console.error("Error parsing image URLs", e)
+	}
 	return urls
 }
 
