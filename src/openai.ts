@@ -47,7 +47,6 @@ async function chatCompletionStream(systemPrompt: string, userPrompt: string) {
 export async function isFlagged(input: string) {
 	const response = await oai.moderations.create({ input })
 	const [results] = response.results // we only need the first result
-	// return results?.flagged === true ?? false
 
 	if (results?.flagged === true)
 		return true;
