@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"target": "es2017", // Required or Vercel will throw errors during the NPM build step.
 		"sourceMap": true,
 		"outDir": "./dist",
 		"noImplicitAny": true,
